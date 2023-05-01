@@ -1,0 +1,14 @@
+# BASE
+INFO:Finished running 10000 queries in 3.0944710303500034 minutes
+
+- 1
+INFO:Finished running 10000 queries in 2.530323987250002 minutes
+
+- 2
+INFO:Finished running 10000 queries in 1.8872796025999985 minutes
+
+- 3
+INFO:Finished running 10000 queries in 1.2302640185999962 minutes
+
+- 4
+INFO:Finished running 10000 queries in 0.8543408876166647 minutes
