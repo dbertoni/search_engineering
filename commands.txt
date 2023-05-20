@@ -1,0 +1,14 @@
+=# Create index
+curl -k -X PUT -u 'admin:admin' "https://localhost:9200/bbuy_products" -H 'Content-Type: application/json' -d @bbuy_products.json
+
+# Index data
+export BBUY_DATA=/workspace/search_engineering/product_data/products
+python index.py -s $BBUY_DATA -w 8 -b 500
+
+# Update the index
+curl -k -X PUT -u 'admin:admin' "https://localhost:9200/bbuy_products/_settings" -H 'Content-Type: application/json' -d '{"index": {"number_of_replicas": 2}}'
+
+# Run query loads
+export BBUY_QUERIES=/workspace/search_engineering
+python ./query.py -q $BBUY_QUERIES/train.csv -w 4 -m 25000
+
